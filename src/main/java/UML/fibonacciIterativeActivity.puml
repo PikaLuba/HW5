@@ -4,9 +4,9 @@
 start
 floating note left: метод fibonacciIterative(n)
 
-:int a;
-:int b;
-:int c;
+:int a = 0;
+:int b = 1;
+:int c = 1;
 
 if (n <= 1) then (yes)
       :Return(n);
