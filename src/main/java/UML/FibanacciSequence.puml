@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+activate fibanacciRecursive
+alt n <= 1
+    [<- fibanacciRecursive: Return(n)
+
+else n > 1
+
+    fibanacciRecursive -> fibanacciRecursive: long l2 = fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
+    [<- fibanacciRecursive: Return(l2)
+
+  deactivate fibanacciRecursive
+end
+@enduml

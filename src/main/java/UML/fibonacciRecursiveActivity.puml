@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+floating note left: метод fibonacciRecursive(n)
+
+if (n <= 1) then (yes)
+      :Return(n);
+      stop
+else (no)
+   :Return(fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2));
+   stop
+endif
+
+@enduml

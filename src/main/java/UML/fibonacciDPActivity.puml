@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+floating note left: метод fibonacciDP(n)
+
+:Map<Integer, Long> memo = new HashMap<>();
+
+if (n <= 1) then (yes)
+      :Return(n);
+      stop
+else (no)
+    if (memo.containsKey(n)) then (yes)
+             :Return(memo.get(n));
+             stop
+       else (no)
+          :long fib = fibonacciDP(n - 1) + fibonacciDP(n - 2);
+          :memo.put(n, fib);
+          :Return(fib);
+          stop
+    endif
+endif
+
+@enduml

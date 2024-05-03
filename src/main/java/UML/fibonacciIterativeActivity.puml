@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+floating note left: метод fibonacciIterative(n)
+
+:int a;
+:int b;
+:int c;
+
+if (n <= 1) then (yes)
+      :Return(n);
+      stop
+else (no)
+   :i = 2;
+   repeat
+     :c = b;
+     :b = a + b;
+     :a = c;
+     :i = i + 1;
+   repeat while (i < n + 1) is (да) not (нет)
+   :Return(b);
+   stop
+endif
+
+@enduml

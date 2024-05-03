@@ -1,0 +1,61 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+floating note left: <b>Fibanacci</b>
+:Приклад 1
+:int n = 6;
+note right
+  Розрахунок числа Фібаначчі на
+  <b>малих значеннях n </b> трьома методами
+  та часу їх виконання
+  ====
+  * Визов методу "fibonacciIterative",
+  * Визов методу "fibonacciRecursive",
+  * Визов методу "fibonacciDP"
+end note
+
+:long start = System.nanoTime()
+:long fibonacciIterative = fibonacciIterative(n)
+:System.out.println("fibonacciIterative(" + n + ")= " + fibonacciIterative + "   Time= " + (System.nanoTime() - start) + " нс");
+floating note left: метод fibonacciIterative(n) - дивись "fibonacciIterative.puml"
+
+:long start = System.nanoTime()
+:long fibonacciRecursive = fibonacciRecursive(n)
+:System.out.println("fibonacciRecursive(" + n + ")= " + fibonacciRecursive + "   Time= " + (System.nanoTime() - start) + " нс");
+floating note left: метод fibonacciRecursive(n) - дивись "fibonacciRecursive.puml"
+
+:long start = System.nanoTime()
+:long fibonacciDP = fibonacciDP(n)
+:System.out.println("fibonacciDP(" + n + ")= " + fibonacciDP + "   Time= " + (System.nanoTime() - start) + " нс");
+floating note left: метод fibonacciDP(n) - дивись "fibonacciDP.puml"
+
+:Приклад 2
+:int n = 45;
+note right
+  Розрахунок числа Фібаначчі на
+  <b>великих значеннях n </b> трьома методами
+  та часу їх виконання
+  ====
+  * Визов методу "fibonacciIterative",
+  * Визов методу "fibonacciRecursive",
+  * Визов методу "fibonacciDP"
+end note
+
+:long start = System.nanoTime()
+:long fibonacciIterative = fibonacciIterative(n)
+:System.out.println("fibonacciIterative(" + n + ")= " + fibonacciIterative + "   Time= " + (System.nanoTime() - start) + " нс");
+floating note left: метод fibonacciIterative(n) - дивись "fibonacciIterativeActivity.puml"
+
+:long start = System.nanoTime()
+:long fibonacciRecursive = fibonacciRecursive(n)
+:System.out.println("fibonacciRecursive(" + n + ")= " + fibonacciRecursive + "   Time= " + (System.nanoTime() - start) + " нс");
+floating note left: метод fibonacciRecursive(n) - дивись "fibonacciRecursiveActivity.puml"
+
+:long start = System.nanoTime()
+:long fibonacciDP = fibonacciDP(n)
+:System.out.println("fibonacciDP(" + n + ")= " + fibonacciDP + "   Time= " + (System.nanoTime() - start) + " нс");
+floating note left: метод fibonacciDP(n) - дивись "fibonacciDPActivity.puml"
+stop
+
+@enduml
