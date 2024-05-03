@@ -3,14 +3,33 @@ package org.example;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Fibonacci {
+class Fibonacci {
     private static Map<Integer, Long> memo = new HashMap<>();
+    public static void main(String[] args) {
+        int n = 6;
+        long start = System.nanoTime();
+        System.out.println("FibonacciIterative(" + n + ")= " + fibonacciIterative(n) + "   Time= " + (System.nanoTime() - start) + " нс");
+        start = System.nanoTime();
+        System.out.println("FibonacciRecursive(" + n + ")= " + fibonacciRecursive(n) + "   Time= " + (System.nanoTime() - start) + " нс");
+        start = System.nanoTime();
+        System.out.println("FibonacciDP(" + n + ")= " + fibonacciDP(n) + "   Time= " + (System.nanoTime() - start) + " нс");
 
+        System.out.println("");
+
+        n = 45;
+        start = System.nanoTime();
+        System.out.println("FibonacciIterative(" + n + ")= " + fibonacciIterative(n) + "   Time= " + (System.nanoTime() - start) + " нс");
+        start = System.nanoTime();
+        System.out.println("FibonacciRecursive(" + n + ")= " + fibonacciRecursive(n) + "   Time= " + (System.nanoTime() - start) + " нс");
+        start = System.nanoTime();
+        System.out.println("FibonacciDP(" + n + ")= " + fibonacciDP(n) + "   Time= " + (System.nanoTime() - start) + " нс");
+
+    }
     /**
      * Time Complexity: O(N)
      * Auxiliary Space: O(1)
      */
-    public static long fibonacciIterative(int n) {
+    private static long fibonacciIterative(int n) {
         int a = 0;
         int b = 1;
         int c = 1;
@@ -30,7 +49,7 @@ public class Fibonacci {
      * Time Complexity: O(2**N)
      * Auxiliary Space: O(n)
      */
-    public static long fibonacciRecursive(int n) {
+    private static long fibonacciRecursive(int n) {
         if (n <= 1) {
             return n;
         } else {
@@ -42,7 +61,7 @@ public class Fibonacci {
      * Time Complexity: O(n)
      * Auxiliary Space: O(n)
      */
-    public static long fibonacciDP(int n) {
+    private static long fibonacciDP(int n) {
 
         if (n <= 1) {
             return n;
@@ -57,25 +76,6 @@ public class Fibonacci {
         return fib;
     }
 
-    public static void main(String[] args) {
-        int n = 6;
-        long start = System.nanoTime();
-        System.out.println("FibonacciIterative(" + n + ")= " + fibonacciIterative(n) + "   Time=" + (System.nanoTime() - start) + " нс");
-        start = System.nanoTime();
-        System.out.println("FibonacciRecursive(" + n + ")= " + fibonacciRecursive(n) + "   Time= " + (System.nanoTime() - start) + " нс");
-        start = System.nanoTime();
-        System.out.println("FibonacciDP(" + n + ")= " + fibonacciDP(n) + "   Time= " + (System.nanoTime() - start) + " нс");
 
-        System.out.println("");
-
-        n = 45;
-        start = System.nanoTime();
-        System.out.println("FibonacciIterative(" + n + ")= " + fibonacciIterative(n) + "   Time= " + (System.nanoTime() - start) + " нс");
-        start = System.nanoTime();
-        System.out.println("FibonacciRecursive(" + n + ")= " + fibonacciRecursive(n) + "   Time= " + (System.nanoTime() - start) + " нс");
-        start = System.nanoTime();
-        System.out.println("FibonacciDP(" + n + ")= " + fibonacciDP(n) + "   Time= " + (System.nanoTime() - start) + " нс");
-
-    }
 }
 
