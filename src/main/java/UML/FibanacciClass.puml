@@ -3,11 +3,11 @@
 
 skinparam classAttributeIconSize 0
 class Fibanacci {
- - memo : Map<Integer, Long>
+ -memo : Map<Integer, Long>
  +main(args : String[]) : void
- +fibonacciDP(n : int) : long
- +fibonacciRecursive(n : int) : long
- +fibanacciIterative(n : int) ; long
+ -fibonacciDP(n : int) : long
+ -fibonacciRecursive(n : int) : long
+ -fibanacciIterative(n : int) ; long
 }
 Fibanacci <|-- java.util.Map
 Fibanacci <|-- java.util.HashMap
